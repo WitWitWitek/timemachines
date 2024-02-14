@@ -1,9 +1,9 @@
 import { client } from "./sanity";
-
-export async function getCarsData(): Promise<any[]> {
+import { Car } from "../types";
+export async function getCarsData(): Promise<Car[]> {
   const query = `*[_type == "cars"] {
-      title,
-      description
+      model,
+      parameters
     }`;
 
   const projectsData = await client.fetch(query);
