@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { getCarsData } from "../lib/sanity-actions";
 
 export default async function Home() {
@@ -10,10 +11,13 @@ export default async function Home() {
             <h2>{car.model}</h2>
             <ul>
               {car.parameters.map(({ parameterName, parameterValue }, i) => (
-                <li key={i}>
-                  {parameterName}: {parameterValue}
-                </li>
+                <div key={i}>
+                  <li>
+                    {parameterName}: {parameterValue}
+                  </li>
+                </div>
               ))}
+              <Link href={`/samochody/${car.slug}`}>Więcej...</Link>
             </ul>
             <hr />
           </div>
