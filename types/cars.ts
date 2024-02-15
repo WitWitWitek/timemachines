@@ -8,5 +8,5 @@ export interface Car {
 
 export interface SingleCar extends Car {
   content: TypedObject | TypedObject[];
-  gallery: string[];
+  gallery: any[];
 }

@@ -16,7 +16,8 @@ export async function getSingleCarData(slug: string): Promise<SingleCar> {
       model,
       "slug": slug.current,
       parameters,
-      content
+      content,
+      gallery
     }[0]`;
 
   const singleCarData = await client.fetch(query);
