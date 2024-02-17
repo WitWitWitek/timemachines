@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { getCarsData } from "../lib/sanity-actions";
 
+export const revalidate = 1;
+
 export default async function Home() {
   const cars = await getCarsData();
   return (
