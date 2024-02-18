@@ -4,7 +4,7 @@ export async function getCarsData(): Promise<Car[]> {
   const query = `*[_type == "cars"] {
       model,
       "slug": slug.current,
-      parameters
+      coverImage
     }`;
 
   const carsData = await client.fetch(query);

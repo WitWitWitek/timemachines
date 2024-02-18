@@ -17,10 +17,10 @@ export default async function CarPage({
 
   const { content, gallery } = singleCar;
   return (
-    <div>
+    <>
       <CarForm />
       <ImageSlider urls={getGalleryImages(gallery)} />
       <PortableText value={content} />
-    </div>
+    </>
   );
 }
