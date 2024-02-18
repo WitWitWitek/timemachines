@@ -24,13 +24,15 @@ import { TCarFormSchema } from "../../validation/car-form-schema";
 import useContactForm from "../../hooks/use-form";
 import { cn } from "../../lib/utils";
 import { CalendarIcon } from "@radix-ui/react-icons";
-import { format } from "date-fns";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { formatPLDate } from "../../lib/format-date";
+import { pl } from "date-fns/locale";
 
 export default function ContactForm() {
   const [sheetOpen, setSheetOpen] = useState(false);
   const pathname = usePathname();
+
   const { form, sendContactFormHandler, isLoading } = useContactForm();
   const onSubmit = async (values: TCarFormSchema) => {
     sendContactFormHandler({ ...values, link: pathname });
@@ -59,6 +61,7 @@ export default function ContactForm() {
                 </FormItem>
               )}
             ></FormField>
+
             <FormField
               control={form.control}
               name="email"
@@ -72,20 +75,6 @@ export default function ContactForm() {
                       type="email"
                       {...field}
                     />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            ></FormField>
-            <FormField
-              control={form.control}
-              name="message"
-              disabled={isLoading}
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Wiadomość:</FormLabel>
-                  <FormControl>
-                    <Textarea placeholder="Treść wiadomości..." {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -113,7 +102,7 @@ export default function ContactForm() {
                           >
                             <CalendarIcon className="mr-2 h-4 w-4" />
                             {field.value ? (
-                              format(field.value, "PPP")
+                              formatPLDate(field.value)
                             ) : (
                               <span>Wybierz datę</span>
                             )}
@@ -122,6 +111,7 @@ export default function ContactForm() {
                       </PopoverTrigger>
                       <PopoverContent className="w-auto p-0" align="start">
                         <Calendar
+                          locale={pl}
                           initialFocus
                           mode="single"
                           defaultMonth={field.value}
@@ -157,7 +147,7 @@ export default function ContactForm() {
                           >
                             <CalendarIcon className="mr-2 h-4 w-4" />
                             {field.value ? (
-                              format(field.value, "PPP")
+                              formatPLDate(field.value)
                             ) : (
                               <span>Wybierz datę</span>
                             )}
@@ -166,6 +156,7 @@ export default function ContactForm() {
                       </PopoverTrigger>
                       <PopoverContent className="w-auto p-0" align="start">
                         <Calendar
+                          locale={pl}
                           mode="single"
                           defaultMonth={field.value}
                           onSelect={field.onChange}
@@ -177,6 +168,21 @@ export default function ContactForm() {
                       </PopoverContent>
                     </Popover>
                   </div>
+                  <FormMessage />
+                </FormItem>
+              )}
+            ></FormField>
+
+            <FormField
+              control={form.control}
+              name="message"
+              disabled={isLoading}
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Wiadomość:</FormLabel>
+                  <FormControl>
+                    <Textarea placeholder="Treść wiadomości..." {...field} />
+                  </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
