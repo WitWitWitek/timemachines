@@ -16,7 +16,7 @@ import {
   PopoverTrigger,
 } from "../ui";
 import * as z from "zod";
-import { formSchema } from "../../validation/car-form-schema";
+import { TCarFormSchema } from "../../validation/car-form-schema";
 import useContactForm from "../../hooks/use-form";
 import { cn } from "../../lib/utils";
 import { CalendarIcon } from "@radix-ui/react-icons";
@@ -25,8 +25,7 @@ import { format } from "date-fns";
 export default function ContactForm() {
   const { form, sendContactFormHandler, isLoading } = useContactForm();
 
-  const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    console.log(values);
+  const onSubmit = async (values: TCarFormSchema) => {
     sendContactFormHandler(values);
   };
 
@@ -116,6 +115,7 @@ export default function ContactForm() {
                           mode="single"
                           defaultMonth={field.value}
                           onSelect={field.onChange}
+                          selected={field.value ?? new Date()}
                         />
                       </PopoverContent>
                     </Popover>
@@ -155,10 +155,13 @@ export default function ContactForm() {
                       </PopoverTrigger>
                       <PopoverContent className="w-auto p-0" align="start">
                         <Calendar
-                          initialFocus
                           mode="single"
                           defaultMonth={field.value}
                           onSelect={field.onChange}
+                          selected={
+                            field.value ??
+                            new Date(new Date().getTime() + 24 * 60 * 60 * 1000)
+                          }
                         />
                       </PopoverContent>
                     </Popover>

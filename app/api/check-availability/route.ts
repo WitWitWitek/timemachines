@@ -1,10 +1,13 @@
 import { NextResponse, NextRequest } from "next/server";
 import { transporter } from "../../../lib/nodemailer";
 import DOMPurify from "isomorphic-dompurify";
-
+import { TCarFormSchema } from "../../../validation/car-form-schema";
+import { format } from "date-fns";
+import { pl } from "date-fns/locale";
 export async function POST(request: NextRequest) {
   try {
-    const { fullname, email, message } = await request.json();
+    const { fullname, email, message, startDate, endDate } =
+      (await request.json()) as TCarFormSchema;
 
     if (!fullname || !email || !message) {
       return NextResponse.json(
@@ -15,12 +18,23 @@ export async function POST(request: NextRequest) {
 
     const cleanedFullname = DOMPurify.sanitize(fullname);
     const cleanedEmail = DOMPurify.sanitize(email);
-
+    const cleanedMessage = DOMPurify.sanitize(message);
+    const formatLocalDate = (date: Date) =>
+      format(date, "dd MMMM yyyy", {
+        locale: pl,
+      });
     const mailOptions = {
       from: process.env.NODEMAILER_EMAIL,
       to: process.env.RECIPENT_EMAIL,
       subject: "Wiadomość z formularza kontaktowego",
-      html: `${cleanedFullname} ${cleanedEmail} ${message}`,
+      html: `
+      <div>
+          <p>Imię i nazwisko: ${cleanedFullname}</p>
+          <p>E-mail: ${cleanedEmail}</p>
+          <p>Data początkowa: ${formatLocalDate(startDate)}</p>
+          <p>Data końcowa: ${formatLocalDate(endDate)}</p>
+          <p>Wiadomość: ${cleanedMessage}</p>
+      </div>`,
     };
 
     await transporter.sendMail({ ...mailOptions });
