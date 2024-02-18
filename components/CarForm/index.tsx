@@ -14,6 +14,11 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetTitle,
+  buttonVariants,
 } from "../ui";
 import { TCarFormSchema } from "../../validation/car-form-schema";
 import useContactForm from "../../hooks/use-form";
@@ -21,8 +26,10 @@ import { cn } from "../../lib/utils";
 import { CalendarIcon } from "@radix-ui/react-icons";
 import { format } from "date-fns";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 export default function ContactForm() {
+  const [sheetOpen, setSheetOpen] = useState(false);
   const pathname = usePathname();
   const { form, sendContactFormHandler, isLoading } = useContactForm();
   const onSubmit = async (values: TCarFormSchema) => {
@@ -30,8 +37,12 @@ export default function ContactForm() {
   };
 
   return (
-    <>
-      <div>
+    <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
+      <SheetTrigger className={buttonVariants({ variant: "default" })}>
+        Zapytaj o dostępność
+      </SheetTrigger>
+      <SheetContent>
+        <SheetTitle>Zapytaj o samochód:</SheetTitle>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)}>
             <FormField
@@ -176,7 +187,7 @@ export default function ContactForm() {
             </Button>
           </form>
         </Form>
-      </div>
-    </>
+      </SheetContent>
+    </Sheet>
   );
 }
