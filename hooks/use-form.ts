@@ -1,16 +1,13 @@
-// import { useToast } from "@witekrychlik/ui-components";
+import { toast } from "sonner";
 import { useState } from "react";
-import * as z from "zod";
 import { CarFormSchema, TCarFormSchema } from "../validation/car-form-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { usePathname } from "next/navigation";
 
 const useContactForm = () => {
-  const pathname = usePathname();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
-  // const { toast } = useToast();
 
   const form = useForm<TCarFormSchema>({
     resolver: zodResolver(CarFormSchema),
@@ -40,15 +37,9 @@ const useContactForm = () => {
       );
       const data = (await response.json()) as { message: string };
       response.ok && form.reset();
-      // toast({
-      //   title: data.message,
-      //   variant: response.ok ? "default" : "destructive",
-      // });
+      toast.success(data.message);
     } catch (err) {
-      // toast({
-      //   title: "Wystąpił problem w trakcie wysyłania wiadomości.",
-      //   variant: "destructive",
-      // });
+      toast.error("Wystąpił problem w trakcie wysyłania wiadomości.");
     } finally {
       setIsLoading(() => false);
     }

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getCarsData } from "../lib/sanity-actions";
+import { getCarsData } from "../../lib/sanity-actions";
 
 export const revalidate = 1;
 
