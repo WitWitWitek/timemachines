@@ -15,18 +15,18 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "../ui";
-import * as z from "zod";
 import { TCarFormSchema } from "../../validation/car-form-schema";
 import useContactForm from "../../hooks/use-form";
 import { cn } from "../../lib/utils";
 import { CalendarIcon } from "@radix-ui/react-icons";
 import { format } from "date-fns";
+import { usePathname } from "next/navigation";
 
 export default function ContactForm() {
+  const pathname = usePathname();
   const { form, sendContactFormHandler, isLoading } = useContactForm();
-
   const onSubmit = async (values: TCarFormSchema) => {
-    sendContactFormHandler(values);
+    sendContactFormHandler({ ...values, link: pathname });
   };
 
   return (

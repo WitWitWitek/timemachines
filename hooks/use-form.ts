@@ -4,8 +4,10 @@ import * as z from "zod";
 import { CarFormSchema, TCarFormSchema } from "../validation/car-form-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { usePathname } from "next/navigation";
 
 const useContactForm = () => {
+  const pathname = usePathname();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
   // const { toast } = useToast();
@@ -18,6 +20,7 @@ const useContactForm = () => {
       startDate: undefined,
       endDate: undefined,
       message: "",
+      link: "",
     },
   });
 

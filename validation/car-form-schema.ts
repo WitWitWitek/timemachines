@@ -38,6 +38,7 @@ export const CarFormSchema = z
       .max(1000, {
         message: "Wiadomośc powinna zawierać maksymalnie 1000 znaków.",
       }),
+    link: z.string(),
   })
   .refine(
     (schema) =>

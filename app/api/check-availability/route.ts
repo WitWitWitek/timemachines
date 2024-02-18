@@ -6,10 +6,10 @@ import { format } from "date-fns";
 import { pl } from "date-fns/locale";
 export async function POST(request: NextRequest) {
   try {
-    const { fullname, email, message, startDate, endDate } =
+    const { fullname, email, message, startDate, endDate, link } =
       (await request.json()) as TCarFormSchema;
 
-    if (!fullname || !email || !message) {
+    if (!fullname || !email || !message || !startDate || !endDate) {
       return NextResponse.json(
         { message: "Wszystkie pola są wymagane!" },
         { status: 500 }
@@ -34,6 +34,7 @@ export async function POST(request: NextRequest) {
           <p>Data początkowa: ${formatLocalDate(startDate)}</p>
           <p>Data końcowa: ${formatLocalDate(endDate)}</p>
           <p>Wiadomość: ${cleanedMessage}</p>
+          <p>Dotyczy: ${process.env.NEXT_PUBLIC_SERVER_URL}${link}</p>
       </div>`,
     };
 
