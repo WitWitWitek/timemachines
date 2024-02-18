@@ -3,7 +3,7 @@ import { getSingleCarData } from "../../../lib/sanity-actions";
 import { getGalleryImages } from "../../../lib/sanity-images";
 import ImageSlider from "../../../components/ImageSlider";
 import { notFound } from "next/navigation";
-import ContactForm from "../../../components/CarForm";
+import CarForm from "../../../components/CarForm";
 
 export const revalidate = 1;
 
@@ -18,7 +18,7 @@ export default async function CarPage({
   const { content, gallery } = singleCar;
   return (
     <div>
-      <ContactForm />
+      <CarForm />
       <ImageSlider urls={getGalleryImages(gallery)} />
       <PortableText value={content} />
     </div>

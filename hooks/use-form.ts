@@ -1,32 +1,20 @@
 import { toast } from "sonner";
 import { useState } from "react";
-import { CarFormSchema, TCarFormSchema } from "../validation/car-form-schema";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { usePathname } from "next/navigation";
+import { FieldValues, UseFormReturn, useForm } from "react-hook-form";
 
-const useContactForm = () => {
+function useCarForm<T extends FieldValues>(
+  form: UseFormReturn<T>,
+  endpoint: string
+) {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
 
-  const form = useForm<TCarFormSchema>({
-    resolver: zodResolver(CarFormSchema),
-    defaultValues: {
-      fullname: "",
-      email: "",
-      startDate: undefined,
-      endDate: undefined,
-      message: "",
-      link: "",
-    },
-  });
-
-  async function sendContactFormHandler(values: TCarFormSchema) {
+  async function sendFormHandler(values: T) {
     try {
       setIsLoading(() => true);
       setIsSuccess(() => false);
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_SERVER_URL}/api/check-availability`,
+        `${process.env.NEXT_PUBLIC_SERVER_URL}${endpoint}`,
         {
           method: "POST",
           headers: {
@@ -49,8 +37,8 @@ const useContactForm = () => {
     form,
     isSuccess,
     isLoading,
-    sendContactFormHandler,
+    sendFormHandler,
   };
-};
+}
 
-export default useContactForm;
+export default useCarForm;

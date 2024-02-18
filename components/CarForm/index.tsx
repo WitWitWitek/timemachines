@@ -20,7 +20,10 @@ import {
   SheetTitle,
   buttonVariants,
 } from "../ui";
-import { TCarFormSchema } from "../../validation/car-form-schema";
+import {
+  CarFormSchema,
+  TCarFormSchema,
+} from "../../validation/car-form-schema";
 import useContactForm from "../../hooks/use-form";
 import { cn } from "../../lib/utils";
 import { CalendarIcon } from "@radix-ui/react-icons";
@@ -28,15 +31,33 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { formatPLDate } from "../../lib/format-date";
 import { pl } from "date-fns/locale";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { ApiEndpoints } from "../../types";
 
 export default function ContactForm() {
   const [sheetOpen, setSheetOpen] = useState(false);
   const pathname = usePathname();
 
-  const { form, sendContactFormHandler, isLoading } = useContactForm();
-  const onSubmit = async (values: TCarFormSchema) => {
-    sendContactFormHandler({ ...values, link: pathname });
-  };
+  const carForm = useForm<TCarFormSchema>({
+    resolver: zodResolver(CarFormSchema),
+    defaultValues: {
+      fullname: "",
+      email: "",
+      startDate: undefined,
+      endDate: undefined,
+      message: "",
+      link: "",
+    },
+  });
+
+  const { sendFormHandler, isLoading } = useContactForm<TCarFormSchema>(
+    carForm,
+    ApiEndpoints.checkAvailability
+  );
+
+  const onSubmit = async (values: TCarFormSchema) =>
+    await sendFormHandler({ ...values, link: pathname });
 
   return (
     <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
@@ -45,10 +66,10 @@ export default function ContactForm() {
       </SheetTrigger>
       <SheetContent>
         <SheetTitle>Zapytaj o samochód:</SheetTitle>
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)}>
+        <Form {...carForm}>
+          <form onSubmit={carForm.handleSubmit(onSubmit)}>
             <FormField
-              control={form.control}
+              control={carForm.control}
               name="fullname"
               disabled={isLoading}
               render={({ field }) => (
@@ -63,7 +84,7 @@ export default function ContactForm() {
             ></FormField>
 
             <FormField
-              control={form.control}
+              control={carForm.control}
               name="email"
               disabled={isLoading}
               render={({ field }) => (
@@ -82,7 +103,7 @@ export default function ContactForm() {
             ></FormField>
 
             <FormField
-              control={form.control}
+              control={carForm.control}
               name="startDate"
               disabled={isLoading}
               render={({ field }) => (
@@ -127,7 +148,7 @@ export default function ContactForm() {
             ></FormField>
 
             <FormField
-              control={form.control}
+              control={carForm.control}
               name="endDate"
               disabled={isLoading}
               render={({ field }) => (
@@ -174,7 +195,7 @@ export default function ContactForm() {
             ></FormField>
 
             <FormField
-              control={form.control}
+              control={carForm.control}
               name="message"
               disabled={isLoading}
               render={({ field }) => (
