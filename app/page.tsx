@@ -1,27 +1,11 @@
-import Link from "next/link";
 import { getCarsData } from "../lib/sanity-actions";
-import CarCard from "../components/CarCard";
-import BlankCard from "../components/BlankCard";
-import { Wrapper } from "../components/ui";
+import { getGalleryImages } from "../lib/sanity-images";
+import HomeHero from "../components/HomeHero/HomeHero";
 
-export const revalidate = 1;
+export const revalidate = 120;
 
 export default async function Home() {
   const cars = await getCarsData();
-  return (
-    <>
-      <Wrapper className="h-screen flex flex-wrap gap-3">
-        {cars.map((car) => (
-          <CarCard key={car.slug} car={car} />
-        ))}
-        <BlankCard />
-      </Wrapper>
-      <Wrapper className="h-screen flex flex-wrap gap-3">
-        {cars.map((car) => (
-          <CarCard key={car.slug} car={car} />
-        ))}
-        <BlankCard />
-      </Wrapper>
-    </>
-  );
+  const carsImages = getGalleryImages(cars.map((car) => car.coverImage));
+  return <HomeHero images={carsImages} />;
 }
