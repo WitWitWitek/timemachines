@@ -2,7 +2,7 @@ import { getCarsData } from "../../lib/sanity-actions";
 import CarCard from "../../components/CarCard";
 import { Wrapper, Section } from "../../components/ui";
 
-export const revalidate = 1;
+export const revalidate = 120;
 
 export default async function Home() {
   const cars = await getCarsData();

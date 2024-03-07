@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 import CarForm from "../../../components/CarForm";
 import { Section } from "../../../components/ui";
 
-export const revalidate = 1;
+export const revalidate = 120;
 
 export default async function CarPage({
   params,
