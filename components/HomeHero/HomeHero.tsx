@@ -23,13 +23,13 @@ export default function HomeHero({ images }: Props) {
         }}
         className="z-40 h-full w-full"
       >
-        <motion.div className="h-full mx-auto max-w-screen-xl px-2.5 md:px-20 flex flex-col justify-center">
-          <div className="flex flex-col justify-center items-start gap-5 w-1/2">
+        <motion.div className="h-full mx-auto max-w-screen-xl px-2.5 md:px-20 py-16 flex flex-col justify-end lg:justify-center">
+          <div className="flex flex-col justify-end items-center lg:items-start gap-5 w-full lg:w-1/2">
             <p className="text-primary font-bold">
               Zakochaj się w naszych klasykach!
             </p>
 
-            <motion.div className="font-bold text-xl md:text-6xl text-secondary">
+            <motion.div className="font-bold text-3xl md:text-6xl text-secondary">
               Najlepsze klasyki w Warszawie od{" "}
               <span className="text-primary">Timemachines</span>
             </motion.div>

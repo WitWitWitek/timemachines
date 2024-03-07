@@ -49,6 +49,7 @@ export const HeroSlider = ({
         img.src = image;
         img.onload = () => resolve(image);
         img.onerror = reject;
+        img.alt = "cover car slider photo";
       });
     });
 

@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { Button, Wrapper } from "../ui";
 import Link from "next/link";
-import NavLarge from "./NavLarge/NavLarge";
+import NavDesktop from "./NavDesktop/NavDesktop";
+import NavMobile from "./NavMobile/NavMobile";
 
 export default function Navbar() {
   return (
@@ -11,7 +12,8 @@ export default function Navbar() {
           <Link href="/">
             <Image src="/logo.png" alt="logo" width={70} height={70} />
           </Link>
-          <NavLarge />
+          <NavMobile />
+          <NavDesktop />
         </Wrapper>
       </header>
     </div>

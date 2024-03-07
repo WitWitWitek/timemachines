@@ -7,7 +7,7 @@ export const revalidate = 1;
 export default async function Home() {
   const cars = await getCarsData();
   return (
-    <div className="bg-primary h-screen">
+    <div className="bg-slate-950 h-screen">
       {cars && cars.map((car, i) => <CarCard key={i} car={car} />)}
     </div>
   );

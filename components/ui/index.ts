@@ -8,3 +8,4 @@ export * from "./popover";
 export * from "./sheet";
 export * from "./card";
 export * from "./wrapper";
+export * from "./navlink";
