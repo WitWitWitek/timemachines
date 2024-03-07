@@ -20,7 +20,7 @@ export default function ImageSlider({ urls }: ImageSliderProps) {
   const [swiper, setSwiper] = useState<null | SwiperType>(null);
 
   return (
-    <div className="relative">
+    <>
       <Swiper
         loop={true}
         spaceBetween={10}
@@ -51,7 +51,7 @@ export default function ImageSlider({ urls }: ImageSliderProps) {
         pagination={{ type: "fraction" }}
         loop={true}
         spaceBetween={12}
-        slidesPerView={4}
+        slidesPerView={3}
         freeMode={true}
         watchSlidesProgress={true}
         className="thumbs mt-3 h-32 w-full rounded-lg"
@@ -70,6 +70,6 @@ export default function ImageSlider({ urls }: ImageSliderProps) {
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </>
   );
 }

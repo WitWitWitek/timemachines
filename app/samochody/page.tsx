@@ -7,8 +7,10 @@ export const revalidate = 120;
 export default async function Home() {
   const cars = await getCarsData();
   return (
-    <Section className="bg-slate-800">
-      <Wrapper>
+    <Section className="bg-slate-900">
+      <Wrapper className="grid grid-cols-3 grid-flow-row gap-4">
+        {cars && cars.map((car, i) => <CarCard key={i} car={car} />)}
+        {cars && cars.map((car, i) => <CarCard key={i} car={car} />)}
         {cars && cars.map((car, i) => <CarCard key={i} car={car} />)}
       </Wrapper>
     </Section>

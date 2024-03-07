@@ -61,7 +61,12 @@ export default function ContactForm() {
 
   return (
     <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
-      <SheetTrigger className={buttonVariants({ variant: "default" })}>
+      <SheetTrigger
+        className={buttonVariants({
+          variant: "outline",
+          className: "text-secondary font-bold",
+        })}
+      >
         Zapytaj o dostępność
       </SheetTrigger>
       <SheetContent className="py-16" side="bottom">
