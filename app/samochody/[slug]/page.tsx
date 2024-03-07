@@ -20,9 +20,15 @@ export default async function CarPage({
   return (
     <Section className="bg-slate-900">
       <Wrapper className="relative">
-        <div className="flex flex-row gap-5">
-          <div className="flex-1 flex flex-col gap-3">
-            <h2 className="text-4xl text-primary font-bold">
+        <h2 className="block md:hidden text-4xl text-primary font-bold">
+          {singleCar.model}
+        </h2>
+        <div className="flex flex-col md:flex-row-reverse gap-5">
+          <div className="static md:sticky top-16 md:w-1/2 md:h-10">
+            <ImageSlider urls={getGalleryImages(gallery)} />
+          </div>
+          <div className="md:flex-1 flex flex-col gap-3">
+            <h2 className="hidden md:block text-4xl text-primary font-bold">
               {singleCar.model}
             </h2>
             <ul className="text-muted-foreground text-xl">
@@ -36,9 +42,6 @@ export default async function CarPage({
             <div className="text-secondary text-justify">
               <PortableText value={content} />
             </div>
-          </div>
-          <div className="sticky top-16 w-1/2 h-10">
-            <ImageSlider urls={getGalleryImages(gallery)} />
           </div>
         </div>
       </Wrapper>
