@@ -11,17 +11,17 @@ interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   children: React.ReactNode;
 }
 
-export function NavLink({ href, children, ...props }: LinkProps) {
+export function NavLink({ href, children, className, ...props }: LinkProps) {
   const path = usePathname();
   return (
     <Link
       href={href}
-      className={cn(buttonVariants({ variant: "link" }), "relative")}
+      className={cn(buttonVariants({ variant: "link" }), "relative", className)}
       {...props}
     >
       {children}
       {href === path && (
-        <div className="absolute top-8 h-2 w-2 rounded-full bg-primary" />
+        <div className="absolute top-8 translate-x-[-50%] left-2/4 h-2 w-2 rounded-full bg-primary" />
       )}
     </Link>
   );

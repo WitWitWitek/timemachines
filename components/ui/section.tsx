@@ -7,7 +7,7 @@ interface SectionProps extends HTMLAttributes<HTMLDivElement> {
 
 export function Section({ children, ...props }: SectionProps) {
   return (
-    <section className={cn(" min-h-screen py-20", props.className)}>
+    <section className={cn("min-h-screen py-20", props.className)}>
       {children}
     </section>
   );

@@ -64,7 +64,7 @@ export default function ContactForm() {
       <SheetTrigger className={buttonVariants({ variant: "default" })}>
         Zapytaj o dostępność
       </SheetTrigger>
-      <SheetContent>
+      <SheetContent className="py-16" side="bottom">
         <SheetTitle>Zapytaj o samochód:</SheetTitle>
         <Form {...carForm}>
           <form onSubmit={carForm.handleSubmit(onSubmit)}>

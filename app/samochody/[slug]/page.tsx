@@ -4,6 +4,7 @@ import { getGalleryImages } from "../../../lib/sanity-images";
 import ImageSlider from "../../../components/ImageSlider";
 import { notFound } from "next/navigation";
 import CarForm from "../../../components/CarForm";
+import { Section } from "../../../components/ui";
 
 export const revalidate = 1;
 
@@ -17,10 +18,10 @@ export default async function CarPage({
 
   const { content, gallery } = singleCar;
   return (
-    <>
+    <Section className="bg-slate-800">
       <CarForm />
       <ImageSlider urls={getGalleryImages(gallery)} />
       <PortableText value={content} />
-    </>
+    </Section>
   );
 }

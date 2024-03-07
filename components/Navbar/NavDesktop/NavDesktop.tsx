@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function NavDesktop() {
   return (
-    <nav className="hidden flex-1 lg:flex flex-row justify-end gap-3">
+    <nav className="hidden flex-1 lg:flex flex-row justify-end gap-3 z-50">
       <div className="flex flex-1 flex-row justify-center gap-3">
         <NavLink href="/">Strona Główna</NavLink>
         <NavLink href="/samochody">Samochody</NavLink>

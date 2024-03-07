@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
-import { Sheet, SheetContent, SheetTrigger } from "../../ui";
+import { NavLink, Sheet, SheetContent, SheetTrigger } from "../../ui";
 import { useState } from "react";
 import { ChevronDownCircle } from "lucide-react";
+import NavList from "./NavList";
 
 export default function NavMobile() {
   const [sheetOpen, setSheetOpen] = useState(false);
@@ -17,11 +17,7 @@ export default function NavMobile() {
           <ChevronDownCircle className="h-7 w-7 text-secondary hover:text-primary" />
         </SheetTrigger>
         <SheetContent side="top" className="py-16">
-          <nav>
-            <Link href="/" onClick={() => setSheetOpen(false)}>
-              Samochody
-            </Link>
-          </nav>
+          <NavList setSheetOpen={setSheetOpen} />
         </SheetContent>
       </Sheet>
     </div>
