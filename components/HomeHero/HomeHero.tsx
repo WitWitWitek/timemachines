@@ -23,9 +23,9 @@ export default function HomeHero({ images }: Props) {
         }}
         className="z-40 h-full w-full"
       >
-        <motion.div className="h-full mx-auto max-w-screen-xl px-2.5 md:px-20 py-16 flex flex-col justify-end lg:justify-center">
-          <div className="flex flex-col justify-end items-center lg:items-start gap-5 w-full lg:w-1/2">
-            <p className="text-primary font-bold">
+        <motion.div className="h-full mx-auto max-w-screen-xl px-2.5 md:px-20 py-20 flex flex-col justify-end lg:justify-center">
+          <div className="flex flex-col justify-end lg:items-start gap-5 w-full lg:w-1/2">
+            <p className="text-primary font-bold text-left">
               Zakochaj się w naszych klasykach!
             </p>
 
@@ -35,7 +35,7 @@ export default function HomeHero({ images }: Props) {
             </motion.div>
             <p className="text-secondary">
               Zamów furę i nie czekaj, to jedyna taka okazja by przejechać się
-              oldschoolową furką
+              oldschoolową furką.
             </p>
             <div className="flex gap-3">
               <Button variant="default">Klasyki</Button>

@@ -10,7 +10,10 @@ export default function NavMobile() {
   return (
     <div className="block lg:hidden">
       <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
-        <SheetTrigger className="flex justify-center lg:hidden">
+        <SheetTrigger
+          className="flex justify-center lg:hidden"
+          aria-label="menu button"
+        >
           <ChevronDownCircle className="h-7 w-7 text-secondary hover:text-primary" />
         </SheetTrigger>
         <SheetContent side="top">

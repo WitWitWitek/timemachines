@@ -144,6 +144,7 @@ export const HeroSlider = ({
             exit={direction === "up" ? "upExit" : "downExit"}
             variants={slideVariants}
             className="image h-full w-full absolute inset-0 object-cover object-center"
+            alt={`Zdjęcie samochodu nr ${currentIndex}`}
           />
         </AnimatePresence>
       )}
