@@ -121,10 +121,7 @@ export const HeroSlider = ({
 
   return (
     <div
-      className={cn(
-        "overflow-hidden h-full w-full relative flex items-center justify-center",
-        className
-      )}
+      className={cn("overflow-hidden h-full w-full relative", className)}
       style={{
         perspective: "1000px",
       }}
@@ -132,7 +129,7 @@ export const HeroSlider = ({
       {areImagesLoaded && children}
       {areImagesLoaded && overlay && (
         <div
-          className={cn("absolute inset-0 bg-black/60 z-40", overlayClassName)}
+          className={cn("absolute inset-0 bg-black/60 z-30", overlayClassName)}
         />
       )}
 
