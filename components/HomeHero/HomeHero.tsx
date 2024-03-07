@@ -1,7 +1,9 @@
 "use client";
 import { HeroSlider } from "../HeroSlider/HeroSlider";
 import { motion } from "framer-motion";
-import { Button, Wrapper } from "../ui";
+import { Button, Wrapper, buttonVariants } from "../ui";
+import Link from "next/link";
+import { cn } from "../../lib/utils";
 type Props = {
   images: string[];
 };
@@ -38,10 +40,21 @@ export default function HomeHero({ images }: Props) {
               oldschoolową furką.
             </p>
             <div className="flex gap-3">
-              <Button variant="default">Klasyki</Button>
-              <Button variant="outline" className="text-secondary">
+              <Link
+                href="/samochody"
+                className={buttonVariants({ variant: "default" })}
+              >
+                Klasyki
+              </Link>
+              <Link
+                href="/samochody"
+                className={cn(
+                  buttonVariants({ variant: "outline" }),
+                  "text-secondary"
+                )}
+              >
                 Zobacz promo
-              </Button>
+              </Link>
             </div>
           </div>
         </motion.div>

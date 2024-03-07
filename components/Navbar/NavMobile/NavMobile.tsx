@@ -16,7 +16,7 @@ export default function NavMobile() {
         >
           <ChevronDownCircle className="h-7 w-7 text-secondary hover:text-primary" />
         </SheetTrigger>
-        <SheetContent side="top">
+        <SheetContent side="top" className="py-16">
           <nav>
             <Link href="/" onClick={() => setSheetOpen(false)}>
               Samochody

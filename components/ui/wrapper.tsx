@@ -1,10 +1,9 @@
 import { cn } from "../../lib/utils";
-import { ReactNode } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 
-type WrapperProps = {
-  className?: string;
+interface WrapperProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
-};
+}
 
 export function Wrapper({ className, children }: WrapperProps) {
   return (

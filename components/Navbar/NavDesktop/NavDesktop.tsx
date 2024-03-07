@@ -9,7 +9,10 @@ export default function NavDesktop() {
         <NavLink href="/samochody">Samochody</NavLink>
       </div>
       <div>
-        <Link href="/" className={buttonVariants({ variant: "outline" })}>
+        <Link
+          href="/samochody"
+          className={buttonVariants({ variant: "outline" })}
+        >
           Wynajmij klasyka
         </Link>
       </div>
