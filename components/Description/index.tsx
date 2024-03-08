@@ -12,7 +12,7 @@ export default function Description() {
           Podróż w czasie z klasyczną motoryzacją
         </h2>
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-36">
-          <div className="text-justify text-lg text-secondary">
+          <div className="text-justify text-lg text-secondary flex flex-col gap-5">
             <p>
               Wsiądź do klasyka ze swojej ulubionej epoki i poczuj klimat.
               Prowadzimy wynajem klasycznych samochodów na terenie Warszawy i
