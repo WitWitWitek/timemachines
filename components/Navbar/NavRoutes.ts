@@ -4,4 +4,5 @@ export const routes: {
 }[] = [
   { href: "/", label: "Strona główna" },
   { href: "/samochody", label: "Samochody" },
+  { href: "/promo", label: "Promo" },
 ];

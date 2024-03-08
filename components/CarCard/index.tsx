@@ -10,7 +10,7 @@ import {
 import { Car } from "../../types";
 import { urlFor } from "../../lib/sanity";
 import Image from "next/image";
-import { racing } from "../../app/fonts";
+import { lobster } from "../../app/fonts";
 
 type CarCardProps = {
   car: Car;
@@ -28,7 +28,9 @@ export default function CarCard({ car }: CarCardProps) {
         />
       </CardHeader>
       <CardContent className="p-2">
-        <CardTitle className={`${racing.className} text-left text-secondary`}>
+        <CardTitle
+          className={`${lobster.className} text-left text-secondary tracking-wide`}
+        >
           {car.model}
         </CardTitle>
       </CardContent>

@@ -1,8 +1,8 @@
-import { Play, Racing_Sans_One } from "next/font/google";
+import { Play, Lobster } from "next/font/google";
 
 export const play = Play({ subsets: ["latin-ext"], weight: ["400", "700"] });
 
-export const racing = Racing_Sans_One({
+export const lobster = Lobster({
   subsets: ["latin"],
   weight: ["400"],
 });

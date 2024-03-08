@@ -5,7 +5,7 @@ import ImageSlider from "../../../components/ImageSlider";
 import { notFound } from "next/navigation";
 import CarForm from "../../../components/CarForm";
 import { Section, Wrapper } from "../../../components/ui";
-import { racing } from "../../fonts";
+import { lobster } from "../../fonts";
 
 export const revalidate = 120;
 
@@ -22,7 +22,7 @@ export default async function CarPage({
     <Section className="bg-slate-900">
       <Wrapper className="relative">
         <h2
-          className={`${racing.className} block md:hidden text-4xl text-primary font-bold`}
+          className={`${lobster.className} block md:hidden text-4xl text-primary font-bold tracking-wide`}
         >
           {singleCar.model}
         </h2>
@@ -32,7 +32,7 @@ export default async function CarPage({
           </div>
           <div className="md:flex-1 flex flex-col gap-3">
             <h2
-              className={`${racing.className} hidden md:block text-5xl text-primary font-bold`}
+              className={`${lobster.className} hidden md:block text-5xl text-primary font-bold tracking-wide`}
             >
               {singleCar.model}
             </h2>

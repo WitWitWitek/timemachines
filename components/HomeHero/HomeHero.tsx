@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Button, Wrapper, buttonVariants } from "../ui";
 import Link from "next/link";
 import { cn } from "../../lib/utils";
-import { racing } from "../../app/fonts";
+import { lobster } from "../../app/fonts";
 type Props = {
   images: string[];
 };
@@ -35,7 +35,7 @@ export default function HomeHero({ images }: Props) {
             <motion.div className="font-bold text-3xl md:text-6xl text-secondary">
               Najlepsze klasyki w Warszawie od{" "}
               <span
-                className={`${racing.className} text-primary text-5xl md:text-7xl`}
+                className={`${lobster.className} text-primary text-5xl md:text-7xl tracking-wide`}
               >
                 Timemachines
               </span>
@@ -52,7 +52,7 @@ export default function HomeHero({ images }: Props) {
                 Klasyki
               </Link>
               <Link
-                href="/samochody"
+                href="/promo"
                 className={cn(
                   buttonVariants({ variant: "outline" }),
                   "text-secondary"
