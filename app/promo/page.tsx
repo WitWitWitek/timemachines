@@ -1,4 +1,5 @@
 import { Section, Wrapper } from "../../components/ui";
+import { perks } from "../../constants";
 
 export default function page() {
   return (

@@ -1,6 +1,7 @@
 import { buttonVariants, NavLink } from "../../ui";
 import Link from "next/link";
-import { routes } from "../NavRoutes";
+import { routes } from "../../../constants";
+
 export default function NavDesktop() {
   return (
     <nav className="hidden flex-1 lg:flex flex-row justify-end gap-3 z-50">

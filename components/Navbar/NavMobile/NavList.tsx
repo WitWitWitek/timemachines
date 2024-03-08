@@ -1,5 +1,5 @@
 import { NavLink } from "../../ui";
-import { routes } from "../NavRoutes";
+import { routes } from "../../../constants";
 import React from "react";
 
 type Props = {
