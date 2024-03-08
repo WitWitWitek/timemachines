@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
-import { Poppins as Font } from "next/font/google";
+import { play } from "./fonts";
 import "./globals.css";
 import { Toaster } from "sonner";
 import { cn } from "../lib/utils";
 import Navbar from "../components/Navbar/Navbar";
-
-const font = Font({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata: Metadata = {
   title: "Timemachines - wypożyczalnia aut",
@@ -21,7 +19,7 @@ export default function RootLayout({
     <html lang="en" className="h-full">
       <Toaster position="bottom-right" richColors expand={true} />
       <body
-        className={cn(font.className, "relative h-full font-sans antialiased")}
+        className={cn(play.className, "relative h-full font-sans antialiased")}
       >
         <main className="relative flex flex-col min-h-screen">
           <Navbar />

@@ -5,6 +5,7 @@ import ImageSlider from "../../../components/ImageSlider";
 import { notFound } from "next/navigation";
 import CarForm from "../../../components/CarForm";
 import { Section, Wrapper } from "../../../components/ui";
+import { racing } from "../../fonts";
 
 export const revalidate = 120;
 
@@ -20,7 +21,9 @@ export default async function CarPage({
   return (
     <Section className="bg-slate-900">
       <Wrapper className="relative">
-        <h2 className="block md:hidden text-4xl text-primary font-bold">
+        <h2
+          className={`${racing.className} block md:hidden text-4xl text-primary font-bold`}
+        >
           {singleCar.model}
         </h2>
         <div className="flex flex-col md:flex-row-reverse gap-5">
@@ -28,7 +31,9 @@ export default async function CarPage({
             <ImageSlider urls={getGalleryImages(gallery)} />
           </div>
           <div className="md:flex-1 flex flex-col gap-3">
-            <h2 className="hidden md:block text-4xl text-primary font-bold">
+            <h2
+              className={`${racing.className} hidden md:block text-5xl text-primary font-bold`}
+            >
               {singleCar.model}
             </h2>
             <ul className="text-muted-foreground text-xl">
