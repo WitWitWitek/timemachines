@@ -4,6 +4,7 @@ import "./globals.css";
 import { Toaster } from "sonner";
 import { cn } from "../lib/utils";
 import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
   title: "Timemachines - wypożyczalnia aut",
@@ -24,6 +25,7 @@ export default function RootLayout({
         <main className="relative flex flex-col min-h-screen">
           <Navbar />
           <div className="flex-grow flex-1">{children}</div>
+          <Footer />
         </main>
       </body>
     </html>
