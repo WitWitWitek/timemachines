@@ -2,6 +2,8 @@ import { getCarsData } from "../lib/sanity-actions";
 import { getGalleryImages } from "../lib/sanity-images";
 import HomeHero from "../components/HomeHero/HomeHero";
 import Perks from "../components/Perks";
+import Description from "../components/Description";
+
 export const revalidate = 120;
 
 export default async function Home() {
@@ -10,7 +12,8 @@ export default async function Home() {
   return (
     <>
       <HomeHero images={carsImages} />
-      <Perks />{" "}
+      <Perks />
+      <Description />
     </>
   );
 }

@@ -130,7 +130,10 @@ export const HeroSlider = ({
       {areImagesLoaded && children}
       {areImagesLoaded && overlay && (
         <div
-          className={cn("absolute inset-0 bg-black/60 z-30", overlayClassName)}
+          className={cn(
+            "absolute inset-0 bg-slate-900/60 z-30",
+            overlayClassName
+          )}
         />
       )}
 
