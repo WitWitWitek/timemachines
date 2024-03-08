@@ -11,7 +11,7 @@ export default function page() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
             frameBorder="0"
-            className="absolute inset-0 h-full aspect-video mx-auto rounded-sm"
+            className="absolute inset-0 md:h-full max-w-full aspect-video m-auto rounded-sm"
           />
         </div>
       </Wrapper>
