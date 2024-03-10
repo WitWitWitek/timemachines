@@ -12,7 +12,8 @@ export default function NavList({ setSheetOpen }: Props) {
         <NavLink
           key={i}
           href={route.href}
-          className="text-seconadry-foreground"
+          className="text-seconadry-foreground text-xl"
+          onClick={() => setSheetOpen(false)}
         >
           {route.label}
         </NavLink>

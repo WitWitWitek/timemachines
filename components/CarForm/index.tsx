@@ -69,10 +69,16 @@ export default function ContactForm() {
       >
         Zapytaj o dostępność
       </SheetTrigger>
-      <SheetContent className="py-16" side="bottom">
+      <SheetContent
+        className="py-16 h-screen md:w-1/2 md: ml-auto"
+        side="bottom"
+      >
         <SheetTitle>Zapytaj o samochód:</SheetTitle>
         <Form {...carForm}>
-          <form onSubmit={carForm.handleSubmit(onSubmit)}>
+          <form
+            onSubmit={carForm.handleSubmit(onSubmit)}
+            className="h-full flex flex-col gap-3 md:w-[90%]"
+          >
             <FormField
               control={carForm.control}
               name="fullname"

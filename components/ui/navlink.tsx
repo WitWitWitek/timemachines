@@ -21,7 +21,7 @@ export function NavLink({ href, children, className, ...props }: LinkProps) {
     >
       {children}
       {href === path && (
-        <div className="absolute top-8 translate-x-[-50%] left-2/4 h-2 w-2 rounded-full bg-primary" />
+        <div className="absolute top-9 translate-x-[-50%] left-2/4 h-2 w-2 rounded-full bg-primary" />
       )}
     </Link>
   );
