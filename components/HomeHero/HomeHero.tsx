@@ -5,6 +5,8 @@ import { Button, Wrapper, buttonVariants } from "../ui";
 import Link from "next/link";
 import { cn } from "../../lib/utils";
 import { lobster } from "../../app/fonts";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
+
 type Props = {
   images: string[];
 };
@@ -44,22 +46,38 @@ export default function HomeHero({ images }: Props) {
               Zamów furę i nie czekaj, to jedyna taka okazja by przejechać się
               oldschoolową furką.
             </p>
-            <div className="flex gap-3">
-              <Link
-                href="/samochody"
-                className={buttonVariants({ variant: "default" })}
-              >
-                Klasyki
-              </Link>
-              <Link
-                href="/promo"
-                className={cn(
-                  buttonVariants({ variant: "outline" }),
-                  "text-secondary"
-                )}
-              >
-                Zobacz promo
-              </Link>
+            <div className="flex flex-row w-full justify-between">
+              <div className="flex gap-3">
+                <Link
+                  href="/samochody"
+                  className={buttonVariants({ variant: "default" })}
+                >
+                  Klasyki
+                </Link>
+                <Link
+                  href="/promo"
+                  className={cn(
+                    buttonVariants({ variant: "outline" }),
+                    "text-secondary"
+                  )}
+                >
+                  Zobacz promo
+                </Link>
+              </div>
+              <div className="flex flex-row gap-3 items-center text-4xl text-primary/40">
+                <Link
+                  href="https://www.facebook.com/people/Time-Machines-Warsaw/100063740756138/"
+                  className="block hover:text-slate-900"
+                >
+                  <FaFacebook />
+                </Link>
+                <Link
+                  href="https://www.instagram.com/timemachines_pl/"
+                  className="block hover:text-slate-900"
+                >
+                  <FaInstagram />
+                </Link>
+              </div>
             </div>
           </div>
         </motion.div>
