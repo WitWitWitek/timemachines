@@ -69,10 +69,7 @@ export default function ContactForm() {
       >
         Zapytaj o dostępność
       </SheetTrigger>
-      <SheetContent
-        className="py-16 h-screen md:w-1/2 md: ml-auto"
-        side="bottom"
-      >
+      <SheetContent className="py-16 overflow-y-auto" side="bottom">
         <SheetTitle>Zapytaj o samochód:</SheetTitle>
         <Form {...carForm}>
           <form
