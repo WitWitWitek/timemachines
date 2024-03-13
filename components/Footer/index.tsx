@@ -6,7 +6,7 @@ import { routes } from "../../constants";
 
 export default function Footer() {
   return (
-    <footer className="bg-primary">
+    <footer className="bg-foreground">
       <Wrapper className="p-20 grid grid-cols-1 lg:grid-cols-3 gap-10 text-secondary justify-between">
         <div className="flex flex-col h-full justify-center">
           <div className="flex-1">

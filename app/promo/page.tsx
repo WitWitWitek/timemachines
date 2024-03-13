@@ -3,7 +3,7 @@ import { perks } from "../../constants";
 
 export default function page() {
   return (
-    <Section className="bg-slate-900 h-screen min-h-screen-[unset]">
+    <Section className="bg-foreground h-screen min-h-screen-[unset]">
       <Wrapper className="w-full h-full">
         <div className="relative w-full h-full">
           <iframe

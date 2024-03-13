@@ -67,13 +67,13 @@ export default function HomeHero({ images }: Props) {
               <div className="flex flex-row gap-3 items-center text-4xl text-primary/40">
                 <Link
                   href="https://www.facebook.com/people/Time-Machines-Warsaw/100063740756138/"
-                  className="block hover:text-slate-900"
+                  className="block hover:text-primary"
                 >
                   <FaFacebook />
                 </Link>
                 <Link
                   href="https://www.instagram.com/timemachines_pl/"
-                  className="block hover:text-slate-900"
+                  className="block hover:text-primary"
                 >
                   <FaInstagram />
                 </Link>

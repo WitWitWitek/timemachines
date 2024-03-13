@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Description() {
   return (
-    <Section className=" bg-slate-900">
+    <Section className=" bg-foreground">
       <Wrapper className="h-full flex flex-col gap-20">
         <h2
           className={`${lobster.className} text-center text-primary text-4xl md:text-6xl`}

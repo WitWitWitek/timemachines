@@ -19,7 +19,7 @@ export default async function CarPage({
 
   const { content, gallery } = singleCar;
   return (
-    <Section className="bg-slate-900">
+    <Section className="bg-foreground">
       <Wrapper className="relative">
         <h2
           className={`${lobster.className} block md:hidden text-4xl text-primary font-bold tracking-wide`}

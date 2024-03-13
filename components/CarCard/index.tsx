@@ -18,7 +18,7 @@ type CarCardProps = {
 
 export default function CarCard({ car }: CarCardProps) {
   return (
-    <Card className="w-full grid gap-2 overflow-hidden border-0 bg-transparent">
+    <Card className="w-full grid gap-2 overflow-hidden bg-transparent">
       <CardHeader className="w-full h-[250px] relative ">
         <Image
           src={urlFor(car.coverImage).url()}
@@ -27,14 +27,14 @@ export default function CarCard({ car }: CarCardProps) {
           className="rounded-sm"
         />
       </CardHeader>
-      <CardContent className="p-2">
+      <CardContent className="p-4">
         <CardTitle
           className={`${lobster.className} text-left text-secondary tracking-wide`}
         >
           {car.model}
         </CardTitle>
       </CardContent>
-      <CardFooter className="flex justify-center w-full p-0">
+      <CardFooter className="flex justify-center w-full p-4">
         <Link
           href={`/samochody/${car.slug}`}
           className={buttonVariants({
