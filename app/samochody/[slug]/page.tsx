@@ -27,7 +27,7 @@ export default async function CarPage({
           {singleCar.model}
         </h2>
         <div className="flex flex-col md:flex-row-reverse gap-5">
-          <div className="static md:sticky top-16 md:w-1/2 md:h-10">
+          <div className="static md:sticky top-16 md:w-1/2 md:h-full">
             <ImageSlider urls={getGalleryImages(gallery)} />
           </div>
           <div className="md:flex-1 flex flex-col gap-3">

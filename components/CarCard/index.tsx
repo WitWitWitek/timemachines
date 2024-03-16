@@ -16,7 +16,7 @@ export default function CarCard({ car }: CarCardProps) {
       className="relative w-full h-[350px] grid gap-2 overflow-hidden bg-cover bg-center border-0"
       style={{ backgroundImage: `url('${photoURL}')` }}
     >
-      <div className="absolute inset-0 w-full h-full bg-foreground/40 z-10" />
+      <div className="absolute inset-0 w-full h-full bg-foreground/40g z-10" />
       <CardContent className="p-4 flex flex-col justify-between z-20">
         <CardTitle
           className={`${lobster.className} text-secondary text-center tracking-wide text-2xl md:text-3xl`}

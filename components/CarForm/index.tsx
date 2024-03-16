@@ -59,6 +59,11 @@ export default function ContactForm() {
   const onSubmit = async (values: TCarFormSchema) =>
     await sendFormHandler({ ...values, link: pathname });
 
+  const inputClassName = buttonVariants({
+    variant: "outline",
+    className: "hover:bg-primary/20 hover:text-secondary-foreground",
+  });
+
   return (
     <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
       <SheetTrigger
@@ -74,7 +79,7 @@ export default function ContactForm() {
         <Form {...carForm}>
           <form
             onSubmit={carForm.handleSubmit(onSubmit)}
-            className="h-full flex flex-col gap-3 md:w-[90%]"
+            className="h-full flex flex-col gap-3 md:w-1/2"
           >
             <FormField
               control={carForm.control}
@@ -84,7 +89,11 @@ export default function ContactForm() {
                 <FormItem>
                   <FormLabel>Imię i nazwisko:</FormLabel>
                   <FormControl>
-                    <Input placeholder="Jan Kowalski" {...field} />
+                    <Input
+                      placeholder="Jan Kowalski"
+                      className={inputClassName}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -102,6 +111,7 @@ export default function ContactForm() {
                     <Input
                       placeholder="jan.kowalski@mail.com"
                       type="email"
+                      className={inputClassName}
                       {...field}
                     />
                   </FormControl>
@@ -210,7 +220,11 @@ export default function ContactForm() {
                 <FormItem>
                   <FormLabel>Wiadomość:</FormLabel>
                   <FormControl>
-                    <Textarea placeholder="Treść wiadomości..." {...field} />
+                    <Textarea
+                      placeholder="Treść wiadomości..."
+                      className={inputClassName}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
