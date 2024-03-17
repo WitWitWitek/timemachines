@@ -11,12 +11,13 @@ export default async function Home() {
     ...car,
     coverImage: urlFor(car.coverImage).url(),
   }));
+
+  const carArray = [...carMapped, ...carMapped.toReversed(), ...carMapped];
+
   return (
     <Section className="bg-foreground">
       <Wrapper className="grid md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-16 md:gap-7 lg:gap-4">
-        {carMapped && carMapped.map((car, i) => <CarCard key={i} car={car} />)}
-        {carMapped && carMapped.map((car, i) => <CarCard key={i} car={car} />)}
-        {carMapped && carMapped.map((car, i) => <CarCard key={i} car={car} />)}
+        {cars && carArray.map((car, i) => <CarCard key={i} car={car} />)}
       </Wrapper>
     </Section>
   );
