@@ -12,7 +12,7 @@ export default async function Home() {
     coverImage: urlFor(car.coverImage).url(),
   }));
 
-  const carArray = [...carMapped, ...carMapped.toReversed(), ...carMapped];
+  const carArray = [...carMapped, ...[...carMapped].reverse(), ...carMapped];
 
   return (
     <Section className="bg-foreground">

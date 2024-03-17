@@ -21,13 +21,13 @@ export default function Footer() {
           <div className="flex-1 flex flex-row gap-5 justify-center text-3xl">
             <Link
               href="https://www.facebook.com/people/Time-Machines-Warsaw/100063740756138/"
-              className="block hover:text-slate-900"
+              className="block hover:text-primary"
             >
               <FaFacebook />
             </Link>
             <Link
               href="https://www.instagram.com/timemachines_pl/"
-              className="block hover:text-slate-900"
+              className="block hover:text-primary"
             >
               <FaInstagram />
             </Link>
@@ -37,7 +37,7 @@ export default function Footer() {
           <h3 className="text-3xl">O stronie:</h3>
           <ul className="flex flex-col gap-4">
             {routes.map((route, i) => (
-              <Link key={i} href={route.href}>
+              <Link key={i} href={route.href} className="hover:text-primary">
                 {route.label}
               </Link>
             ))}
