@@ -11,7 +11,7 @@ export default function Perks() {
         >
           Wynajmij klasyka <br />i przenieś się w czasie
         </h2>
-        <div className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 lg:gap-x-9 lg:gap-y-0 lg:h-[55%]">
+        <div className="flex-1 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 lg:gap-x-9 lg:gap-y-0 place-content-center lg:h-[55%]">
           {perks.map((perk) => (
             <div
               key={perk.name}
