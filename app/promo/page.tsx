@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { Section, Wrapper, buttonVariants } from "../../components/ui";
 import { BsYoutube } from "react-icons/bs";
+import { Gradient } from "../../components/Gradient";
 export default function page() {
   return (
-    <Section className="bg-foreground h-screen min-h-screen-[unset]">
+    <Section className="relative bg-foreground h-screen min-h-screen-[unset]">
       <Wrapper className="w-full h-full flex">
         <div className="relative hidden md:block w-full h-full">
           <iframe
@@ -36,6 +37,7 @@ export default function page() {
           </Link>
         </div>
       </Wrapper>
+      <Gradient />
     </Section>
   );
 }

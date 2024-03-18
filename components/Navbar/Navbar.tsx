@@ -19,7 +19,8 @@ export default function Navbar() {
   return (
     <div
       className={cn("fixed top-0 inset-x-0 h-16 z-50 transition-colors", {
-        "bg-foreground": bgDark,
+        "bg-foreground/70": bgDark,
+        "backdrop-blur-sm": bgDark,
       })}
     >
       <header className="w-full h-full flex">
