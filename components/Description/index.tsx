@@ -8,7 +8,7 @@ export default function Description() {
     <Section className="relative bg-foreground overflow-hidden">
       <Wrapper className="h-full flex flex-col gap-20">
         <h2
-          className={`${lobster.className} text-center text-primary text-4xl md:text-6xl`}
+          className={`${lobster.className} mt-5 text-center text-primary text-4xl md:text-6xl`}
         >
           Podróż w czasie z klasyczną motoryzacją
         </h2>

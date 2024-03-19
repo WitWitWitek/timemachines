@@ -12,7 +12,7 @@ const OfferItem = ({
   };
 }) => (
   <Card className="flex flex-col items-center justify-start rounded-sm shadow-lg hover:bg-primary/80">
-    <div className="px-10 py-5 flex flex-col justify-start gap-5 items-center mt-10">
+    <div className="px-10 py-5 flex flex-col justify-start gap-5 items-center mt-5">
       <div className="w-16 aspect-square bg-foreground grid place-items-center text-secondary rounded-sm shadow-lg">
         <offer.Icon className="w-1/2 h-1/2" />
       </div>
@@ -26,7 +26,7 @@ export default function Offer() {
     <Section className="md:h-screen">
       <Wrapper className="h-full w-full flex flex-col gap-5">
         <h2
-          className={`${lobster.className} text-center text-primary text-4xl md:text-6xl`}
+          className={`${lobster.className} mt-5 text-center text-primary text-4xl md:text-6xl`}
         >
           Nasze usługi
         </h2>

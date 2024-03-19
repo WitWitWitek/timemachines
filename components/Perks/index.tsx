@@ -7,7 +7,7 @@ export default function Perks() {
     <Section className="md:h-screen">
       <Wrapper className="h-full flex flex-col justify-between gap-10">
         <h2
-          className={`${lobster.className} text-center text-primary text-4xl md:text-6xl`}
+          className={`${lobster.className} mt-5 text-center text-primary text-4xl md:text-6xl`}
         >
           Wynajmij klasyka <br />i przenieś się w czasie
         </h2>
