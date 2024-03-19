@@ -1,9 +1,12 @@
 import Image from "next/image";
+import { cn } from "../../lib/utils";
 
-export const Gradient = () => {
+interface GradientProps extends React.ImgHTMLAttributes<HTMLImageElement> {}
+
+export const Gradient = ({ className }: GradientProps) => {
   return (
     <Image
-      className="absolute top-50 left-0 opacity-10"
+      className={cn("absolute opacity-15", className)}
       src="/gradient.png"
       fill
       alt="Gradient"

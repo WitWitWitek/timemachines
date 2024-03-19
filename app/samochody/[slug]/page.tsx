@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import CarForm from "../../../components/CarForm";
 import { Section, Wrapper } from "../../../components/ui";
 import { lobster } from "../../fonts";
+import { Gradient } from "../../../components/Gradient";
 
 export const revalidate = 120;
 
@@ -19,8 +20,8 @@ export default async function CarPage({
 
   const { content, gallery } = singleCar;
   return (
-    <Section className="bg-foreground">
-      <Wrapper className="relative">
+    <Section className="relative bg-foreground">
+      <Wrapper className="relative z-10">
         <h2
           className={`${lobster.className} block md:hidden text-4xl text-primary font-bold tracking-wide`}
         >
@@ -50,6 +51,7 @@ export default async function CarPage({
           </div>
         </div>
       </Wrapper>
+      <Gradient className="top-50 scale-x-150 left-50 -translate-x-1/2 opacity-10" />
     </Section>
   );
 }

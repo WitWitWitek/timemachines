@@ -20,7 +20,7 @@ export default async function Home() {
       <Wrapper className="grid md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-16 md:gap-7 lg:gap-4">
         {cars && carArray.map((car, i) => <CarCard key={i} car={car} />)}
       </Wrapper>
-      <Gradient />
+      <Gradient className="md:scale-x-100 md:-translate-x-1/2 opacity-10" />
     </Section>
   );
 }

@@ -1,10 +1,11 @@
 import { Section, Wrapper } from "../ui";
 import { lobster } from "../../app/fonts";
 import Image from "next/image";
+import { Gradient } from "../Gradient";
 
 export default function Description() {
   return (
-    <Section className=" bg-foreground">
+    <Section className="relative bg-foreground overflow-hidden">
       <Wrapper className="h-full flex flex-col gap-20">
         <h2
           className={`${lobster.className} text-center text-primary text-4xl md:text-6xl`}
@@ -45,6 +46,7 @@ export default function Description() {
           </div>
         </div>
       </Wrapper>
+      <Gradient className="scale-150 translate-x-48 md:-translate-x-1/2 opacity-10" />
     </Section>
   );
 }

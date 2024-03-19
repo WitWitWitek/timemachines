@@ -4,7 +4,7 @@ import { BsYoutube } from "react-icons/bs";
 import { Gradient } from "../../components/Gradient";
 export default function page() {
   return (
-    <Section className="relative bg-foreground h-screen min-h-screen-[unset]">
+    <Section className="relative bg-foreground h-screen min-h-screen-[unset] overflow-hidden">
       <Wrapper className="w-full h-full flex">
         <div className="relative hidden md:block w-full h-full">
           <iframe
@@ -37,7 +37,7 @@ export default function page() {
           </Link>
         </div>
       </Wrapper>
-      <Gradient />
+      <Gradient className="scale-x-100 right-50 translate-x-1/2 opacity-5 md:opacity-10" />
     </Section>
   );
 }
